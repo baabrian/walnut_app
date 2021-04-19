@@ -50,7 +50,11 @@ export default class UserController implements Controller {
         return res.status(401).json('User name dne');
       }
 
-      if (!user.isPasswordValid(req.query.password as string)) {
+      const passValid = await user.isPasswordValid(
+        req.query.password as string
+      );
+
+      if (!passValid) {
         return res.status(403).json('Invalid password');
       }
 
