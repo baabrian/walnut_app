@@ -5,6 +5,7 @@
 step 1: install all dependencies
 
 ```
+npm install
 npm run install:all
 npm run dev
 ```
